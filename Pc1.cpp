@@ -356,6 +356,20 @@ void OrdInsercion(ListaPersonas* lp) { //Tiempo Asintotico = O(n^2)
     }
 
 }
+    void eliminarUsuario(ListaPersonas* listaP) {
+        string aux;
+        cout << "Ingrese un nombre de usuario registrado: " << endl;
+        cin.ignore();
+        getline(cin, aux); cout << endl;
+        for (int i = 0; i < listaP->getCantidad(); i++)
+        {   
+            if (aux == listaP->getpersona(i)->getNombre()) {
+                listaP->eliminarPersona(listaP->getpersona(i));
+                cout << "Usuario:" << aux << " eliminado correctamente" << endl;
+            }
+        }
+        _getch();
+    }
 void ordenaroNombres(ListaPersonas* listaP, ListaTareas* listaT) {// tiempo asintotico = o(n^2)
 
 
